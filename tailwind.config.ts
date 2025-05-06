@@ -63,13 +63,16 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				shimmer: {
-					primary: '#ff338c',
-					secondary: '#8c33ff',
-					tertiary: '#3358ff',
-					dark: '#0f0926',
-					'dark-blue': '#1f1d38'
+				black: '#000000',
+				gradient: {
+					start: '#5e35b1', // deep purple
+					mid: '#9c27b0',   // purple
+					end: '#d81b60'    // pink
 				}
+			},
+			backgroundImage: {
+				'gradient': 'linear-gradient(45deg, #5e35b1, #9c27b0, #d81b60)',
+				'dark-radial': 'radial-gradient(circle at center, #1a1a2e, #000000)'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -166,12 +169,9 @@ export default {
 				'blink': 'blink 1s step-end infinite',
 				'pulse': 'pulse 1.5s ease-in-out infinite',
 				'bounce-horizontal': 'bounce-horizontal 1s ease-in-out infinite'
-			},
-			backgroundImage: {
-				'shimmer-gradient': 'linear-gradient(45deg, #ff338c, #8c33ff, #3358ff, #8c33ff, #ff338c)',
-				'dark-radial': 'radial-gradient(circle at center, #1a1a2e, #0f0926)'
 			}
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
 } satisfies Config;
+

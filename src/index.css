@@ -52,13 +52,13 @@
   }
 
   body {
-    @apply bg-shimmer-dark text-foreground;
+    @apply bg-black text-foreground;
   }
 }
 
 @layer components {
   .shimmer-bg {
-    @apply bg-shimmer-gradient bg-[size:200%_200%] animate-shimmer;
+    @apply bg-gradient bg-[size:200%_200%] animate-shimmer;
   }
   
   .glass-panel {
@@ -66,7 +66,7 @@
   }
   
   .star {
-    @apply absolute rounded-full bg-white/80;
+    @apply absolute rounded-full;
     box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.4);
   }
   
@@ -87,13 +87,13 @@
   }
   
   .shimmer-text {
-    @apply bg-gradient-to-r from-shimmer-primary via-shimmer-secondary to-shimmer-tertiary 
+    @apply bg-gradient-to-r from-gradient-start via-gradient-mid to-gradient-end 
            inline-block text-transparent bg-clip-text;
   }
   
   .gradient-border {
     --angle: 0deg;
-    border-image: linear-gradient(var(--angle), #ff338c, #8c33ff, #3358ff) 1;
+    border-image: linear-gradient(var(--angle), #5e35b1, #9c27b0, #d81b60) 1;
     animation: 10s rotate linear infinite;
   }
   
@@ -109,3 +109,4 @@
     inherits: false;
   }
 }
+

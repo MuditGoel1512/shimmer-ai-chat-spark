@@ -5,7 +5,7 @@ import StarsBackground from '@/components/StarsBackground';
 
 const Index = () => {
   return (
-    <div className="relative min-h-screen flex flex-col items-center justify-center p-4 overflow-hidden">
+    <div className="relative min-h-screen flex flex-col items-center justify-center p-4 overflow-hidden bg-black">
       <StarsBackground />
       
       {/* Header */}
@@ -30,11 +30,12 @@ const Index = () => {
       </div>
       
       {/* Decorative elements */}
-      <div className="fixed bottom-0 left-0 w-full h-40 bg-gradient-to-t from-shimmer-primary/10 to-transparent opacity-50 z-0"></div>
-      <div className="absolute top-[30%] left-[20%] w-32 h-32 rounded-full bg-shimmer-primary/20 blur-3xl"></div>
-      <div className="absolute bottom-[20%] right-[15%] w-40 h-40 rounded-full bg-shimmer-tertiary/10 blur-3xl"></div>
+      <div className="fixed bottom-0 left-0 w-full h-40 bg-gradient-to-t from-gradient-start/20 to-transparent opacity-50 z-0"></div>
+      <div className="absolute top-[30%] left-[20%] w-32 h-32 rounded-full bg-gradient-mid/20 blur-3xl"></div>
+      <div className="absolute bottom-[20%] right-[15%] w-40 h-40 rounded-full bg-gradient-end/20 blur-3xl"></div>
     </div>
   );
 };
 
 export default Index;
+
