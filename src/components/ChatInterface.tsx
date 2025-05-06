@@ -1,6 +1,6 @@
 
 import React, { useState, useRef, useEffect } from 'react';
-import { Send, Image, Code, FileText, Mic, MoreHorizontal, Plus } from 'lucide-react';
+import { Send, Image, FileText, Code, Mic, MoreHorizontal, Plus } from 'lucide-react';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Tooltip } from './ui/tooltip';
@@ -59,12 +59,12 @@ const ChatInterface = () => {
   // Mock AI responses
   const getAIResponse = (userInput: string): string => {
     const responses = [
-      "I'm analyzing the blockchain data for your request...",
-      "That's an interesting question about cryptocurrencies.",
-      "Based on the current market trends, I'd suggest looking into this further.",
-      "There are several factors to consider when evaluating this blockchain solution.",
-      "I can help you understand how this technology works in simple terms.",
-      "Let me gather some relevant information about this crypto project for you."
+      "Based on my analysis, I recommend the following strategy for your business needs.",
+      "I've reviewed the data and can provide you with a detailed assessment of market trends.",
+      "According to industry standards, your approach aligns with best practices in this sector.",
+      "The information you've provided suggests several opportunities for optimization.",
+      "I've identified key areas where efficiency improvements could yield significant returns.",
+      "My recommendation would be to focus on these specific metrics for better outcomes."
     ];
     
     return responses[Math.floor(Math.random() * responses.length)];
@@ -73,14 +73,14 @@ const ChatInterface = () => {
   return (
     <div className="h-full flex flex-col">
       {/* Header */}
-      <div className="flex justify-between items-center p-4 glass-panel">
+      <div className="flex justify-between items-center p-4 bg-black/50 border-b border-white/5">
         <div className="flex items-center gap-2">
-          <div className="bg-shimmer-primary rounded-full p-1 text-white">
+          <div className="bg-white/5 rounded-full p-1 text-white">
             <Plus size={16} />
           </div>
-          <h2 className="font-bold">Ask AI</h2>
+          <h2 className="font-semibold text-white">New Conversation</h2>
         </div>
-        <Button variant="ghost" size="icon" className="rounded-full">
+        <Button variant="ghost" size="icon" className="rounded-full text-white/70 hover:text-white hover:bg-white/10">
           <MoreHorizontal size={18} />
         </Button>
       </div>
@@ -88,12 +88,14 @@ const ChatInterface = () => {
       {/* Empty state for no messages */}
       {messages.length === 0 && (
         <div className="flex-1 flex flex-col items-center justify-center text-center p-8 space-y-6">
-          <div className="text-yellow-300 text-4xl animate-pulse">👋</div>
-          <h3 className="text-xl font-bold shimmer-text animate-shimmer">
-            Ask 'Y' with your prompt.
+          <div className="bg-gradient-to-r from-gradient-start to-gradient-end p-3 rounded-full">
+            <MessageSquare size={24} className="text-white" />
+          </div>
+          <h3 className="text-xl font-bold text-white">
+            Professional AI Assistant
           </h3>
-          <p className="text-sm text-muted-foreground">
-            AI-Powered Conversational User Interface for Cryptocurrency
+          <p className="text-sm text-white/70 max-w-xs">
+            Get insights, recommendations, and answers to your business inquiries
           </p>
         </div>
       )}
@@ -103,7 +105,7 @@ const ChatInterface = () => {
         ref={chatContainerRef} 
         className="flex-1 overflow-y-auto p-4 space-y-4"
         style={{
-          background: 'radial-gradient(circle at center, #1f1d38 0%, #0f0926 100%)',
+          background: 'linear-gradient(180deg, #0a0a0a 0%, #000000 100%)',
           backgroundAttachment: 'fixed'
         }}
       >
@@ -115,16 +117,16 @@ const ChatInterface = () => {
             } animate-fade-in`}
           >
             <div
-              className={`p-3 rounded-2xl ${
+              className={`p-3 rounded-lg ${
                 message.sender === 'user'
-                  ? 'bg-shimmer-primary text-white rounded-tr-none'
-                  : 'glass-panel rounded-tl-none'
+                  ? 'bg-gradient-to-r from-gradient-start to-gradient-end text-white rounded-tr-none'
+                  : 'bg-white/5 backdrop-blur-sm border border-white/5 rounded-tl-none'
               }`}
             >
               {message.content}
             </div>
             <div
-              className={`text-xs text-muted-foreground mt-1 ${
+              className={`text-xs text-white/50 mt-1 ${
                 message.sender === 'user' ? 'text-right' : 'text-left'
               }`}
             >
@@ -139,10 +141,10 @@ const ChatInterface = () => {
         {/* AI typing indicator */}
         {isTyping && (
           <div className="mr-auto animate-fade-in">
-            <div className="p-3 glass-panel rounded-2xl rounded-tl-none flex gap-1.5">
-              <div className="w-2 h-2 rounded-full bg-shimmer-primary animate-pulse"></div>
-              <div className="w-2 h-2 rounded-full bg-shimmer-secondary animate-pulse" style={{ animationDelay: '0.2s' }}></div>
-              <div className="w-2 h-2 rounded-full bg-shimmer-tertiary animate-pulse" style={{ animationDelay: '0.4s' }}></div>
+            <div className="p-3 bg-white/5 backdrop-blur-sm border border-white/5 rounded-lg rounded-tl-none flex gap-1.5">
+              <div className="w-2 h-2 rounded-full bg-gradient-start animate-pulse"></div>
+              <div className="w-2 h-2 rounded-full bg-white/70 animate-pulse" style={{ animationDelay: '0.2s' }}></div>
+              <div className="w-2 h-2 rounded-full bg-gradient-end animate-pulse" style={{ animationDelay: '0.4s' }}></div>
             </div>
           </div>
         )}
@@ -151,45 +153,45 @@ const ChatInterface = () => {
       </div>
 
       {/* Tools section */}
-      <div className="flex items-center justify-between py-2 px-4 border-t border-white/5">
+      <div className="flex items-center justify-between py-2 px-4 border-t border-white/5 bg-black/50">
         <div className="flex gap-1">
           <TooltipProvider>
             <Tooltip>
               <TooltipTrigger asChild>
-                <Button variant="ghost" size="icon" className="rounded-full text-muted-foreground hover:text-white hover:bg-shimmer-dark-blue transition-colors">
+                <Button variant="ghost" size="icon" className="rounded-full text-white/50 hover:text-white hover:bg-white/10 transition-colors">
                   <Image size={18} />
                 </Button>
               </TooltipTrigger>
-              <TooltipContent>Create image</TooltipContent>
+              <TooltipContent>Add image</TooltipContent>
             </Tooltip>
           </TooltipProvider>
           
           <TooltipProvider>
             <Tooltip>
               <TooltipTrigger asChild>
-                <Button variant="ghost" size="icon" className="rounded-full text-muted-foreground hover:text-white hover:bg-shimmer-dark-blue transition-colors">
+                <Button variant="ghost" size="icon" className="rounded-full text-white/50 hover:text-white hover:bg-white/10 transition-colors">
                   <FileText size={18} />
                 </Button>
               </TooltipTrigger>
-              <TooltipContent>Summarize text</TooltipContent>
+              <TooltipContent>Upload document</TooltipContent>
             </Tooltip>
           </TooltipProvider>
           
           <TooltipProvider>
             <Tooltip>
               <TooltipTrigger asChild>
-                <Button variant="ghost" size="icon" className="rounded-full text-muted-foreground hover:text-white hover:bg-shimmer-dark-blue transition-colors">
+                <Button variant="ghost" size="icon" className="rounded-full text-white/50 hover:text-white hover:bg-white/10 transition-colors">
                   <Code size={18} />
                 </Button>
               </TooltipTrigger>
-              <TooltipContent>Code</TooltipContent>
+              <TooltipContent>Code input</TooltipContent>
             </Tooltip>
           </TooltipProvider>
           
           <TooltipProvider>
             <Tooltip>
               <TooltipTrigger asChild>
-                <Button variant="ghost" size="icon" className="rounded-full text-muted-foreground hover:text-white hover:bg-shimmer-dark-blue transition-colors">
+                <Button variant="ghost" size="icon" className="rounded-full text-white/50 hover:text-white hover:bg-white/10 transition-colors">
                   <Mic size={18} />
                 </Button>
               </TooltipTrigger>
@@ -197,26 +199,22 @@ const ChatInterface = () => {
             </Tooltip>
           </TooltipProvider>
         </div>
-        
-        <Button variant="ghost" size="sm" className="text-sm text-muted-foreground hover:text-white">
-          More
-        </Button>
       </div>
 
       {/* Input form */}
-      <form onSubmit={handleSubmit} className="p-3 glass-panel m-3">
-        <div className="flex gap-2">
+      <form onSubmit={handleSubmit} className="p-3 bg-black/70 border-t border-white/5 m-0">
+        <div className="flex gap-2 bg-white/5 rounded-lg p-1">
           <Input
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            placeholder="Message Shimmer AI..."
-            className="flex-1 bg-transparent border-none focus-visible:ring-0 focus-visible:ring-offset-0 placeholder:text-muted-foreground/60"
+            placeholder="Type your message..."
+            className="flex-1 bg-transparent border-none focus-visible:ring-0 focus-visible:ring-offset-0 placeholder:text-white/40 text-white"
           />
           <Button 
             type="submit" 
             size="icon"
             disabled={input.trim() === ''}
-            className={`rounded-full ${input.trim() === '' ? 'bg-shimmer-dark-blue text-muted-foreground' : 'shimmer-bg text-white'}`}
+            className={`rounded-lg ${input.trim() === '' ? 'bg-white/10 text-white/40' : 'bg-gradient-to-r from-gradient-start to-gradient-end text-white'}`}
           >
             <Send size={18} />
           </Button>
@@ -227,3 +225,6 @@ const ChatInterface = () => {
 };
 
 export default ChatInterface;
+
+// Need to import MessageSquare icon
+import { MessageSquare } from 'lucide-react';

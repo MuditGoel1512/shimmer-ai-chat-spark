@@ -33,7 +33,7 @@
     --input: 240 3.7% 15.9%;
     --ring: 240 4.9% 83.9%;
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
 
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
@@ -58,28 +58,28 @@
 
 @layer components {
   .shimmer-bg {
-    @apply bg-gradient bg-[size:200%_200%] animate-shimmer;
+    @apply bg-gradient-to-r from-gradient-start to-gradient-end bg-[size:200%_200%] animate-shimmer;
   }
   
   .glass-panel {
-    @apply bg-black/30 backdrop-blur-md border border-white/10 rounded-2xl;
+    @apply bg-black/50 backdrop-blur-md border border-white/5 rounded-lg shadow-lg;
   }
   
   .star {
     @apply absolute rounded-full;
-    box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 8px 1px rgba(255, 255, 255, 0.2);
   }
   
   .star-sm {
-    @apply w-1 h-1;
+    @apply w-0.5 h-0.5;
   }
   
   .star-md {
-    @apply w-1.5 h-1.5;
+    @apply w-1 h-1;
   }
   
   .star-lg {
-    @apply w-2 h-2;
+    @apply w-1.5 h-1.5;
   }
   
   .floating-element {
@@ -109,4 +109,3 @@
     inherits: false;
   }
 }
-
