@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -65,13 +64,13 @@ export default {
 				},
 				black: '#000000',
 				gradient: {
-					start: '#2e5cb8', // professional blue
-					mid: '#4f78cc',   // medium blue
-					end: '#6a94df'    // light blue
+					start: '#1a5fb4', // deeper professional blue
+					mid: '#3584e4',   // medium blue
+					end: '#62a0ea'    // light blue
 				}
 			},
 			backgroundImage: {
-				'gradient': 'linear-gradient(45deg, #2e5cb8, #4f78cc, #6a94df)',
+				'gradient': 'linear-gradient(45deg, #1a5fb4, #3584e4, #62a0ea)',
 				'dark-radial': 'radial-gradient(circle at center, #10101e, #000000)'
 			},
 			borderRadius: {
@@ -125,7 +124,7 @@ export default {
 						transform: 'translateY(0)'
 					},
 					'50%': {
-						transform: 'translateY(-8px)'
+						transform: 'translateY(-10px)'
 					}
 				},
 				'typing': {
@@ -164,11 +163,15 @@ export default {
 				'fade-in': 'fade-in 0.3s ease-out',
 				'fade-out': 'fade-out 0.3s ease-out',
 				'shimmer': 'shimmer 3s ease-in-out infinite',
-				'float': 'float 6s ease-in-out infinite',
+				'float': 'float 8s ease-in-out infinite',
 				'typing': 'typing 3.5s steps(40, end)',
 				'blink': 'blink 1s step-end infinite',
 				'pulse': 'pulse 1.5s ease-in-out infinite',
 				'bounce-horizontal': 'bounce-horizontal 1s ease-in-out infinite'
+			},
+			boxShadow: {
+				'soft': '0 10px 30px -5px rgba(0, 0, 0, 0.1)',
+				'glow': '0 0 20px rgba(98, 160, 234, 0.3)'
 			}
 		}
 	},

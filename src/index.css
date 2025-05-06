@@ -33,11 +33,11 @@
     --input: 240 3.7% 15.9%;
     --ring: 240 4.9% 83.9%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary: 217.2 91.2% 59.8%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 240 3.7% 15.9%;
     --sidebar-accent-foreground: 240 4.8% 95.9%;
@@ -62,12 +62,12 @@
   }
   
   .glass-panel {
-    @apply bg-black/80 backdrop-blur-md border border-white/5 rounded-lg shadow-lg;
+    @apply bg-black/80 backdrop-blur-md border border-white/5 rounded-xl shadow-lg;
   }
   
   .star {
     @apply absolute rounded-full;
-    box-shadow: 0 0 4px 0px rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 4px 1px rgba(255, 255, 255, 0.05);
   }
   
   .star-sm {
@@ -93,8 +93,16 @@
   
   .gradient-border {
     --angle: 0deg;
-    border-image: linear-gradient(var(--angle), #2e5cb8, #4f78cc, #6a94df) 1;
+    border-image: linear-gradient(var(--angle), #1a5fb4, #3584e4, #62a0ea) 1;
     animation: 10s rotate linear infinite;
+  }
+  
+  .input-field {
+    @apply bg-black/50 border border-white/10 rounded-lg px-4 py-2 text-white placeholder:text-white/40 focus:ring-2 focus:ring-gradient-start/50 focus:border-gradient-start/50 focus:outline-none transition-all;
+  }
+  
+  .btn-primary {
+    @apply bg-gradient-to-r from-gradient-start to-gradient-end text-white rounded-lg px-4 py-2 hover:opacity-90 transition-opacity shadow-md;
   }
   
   @keyframes rotate {

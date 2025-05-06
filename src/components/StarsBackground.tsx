@@ -28,20 +28,20 @@ const StarsBackground: React.FC = () => {
 
   useEffect(() => {
     const generateStars = () => {
-      // Fewer stars for a more professional look
-      const starCount = Math.floor(window.innerWidth / 20);
+      // Even fewer stars for a more professional look
+      const starCount = Math.floor(window.innerWidth / 25);
       const newStars = [];
       
-      // Professional blue color palette
-      const colors = ['#2e5cb8', '#3d6ac5', '#4f78cc', '#5b86d9', '#6a94df'];
+      // Professional blue color palette - more subtle and deeper blues
+      const colors = ['#1a5fb4', '#3584e4', '#62a0ea', '#99c1f1'];
 
       for (let i = 0; i < starCount; i++) {
         // Make most stars small for a more subtle effect
-        const size = Math.random() > 0.95 ? 'lg' : Math.random() > 0.8 ? 'md' : 'sm';
+        const size = Math.random() > 0.97 ? 'lg' : Math.random() > 0.85 ? 'md' : 'sm';
         const style = {
           top: `${Math.random() * 100}%`,
           left: `${Math.random() * 100}%`,
-          opacity: 0.03 + Math.random() * 0.1 // Lower opacity for a subtle effect
+          opacity: 0.02 + Math.random() * 0.08 // Lower opacity for a more subtle effect
         };
         
         // Select a random color from our professional colors
@@ -61,7 +61,12 @@ const StarsBackground: React.FC = () => {
     };
   }, []);
 
-  return <div className="fixed inset-0 overflow-hidden pointer-events-none z-0 bg-black">{stars}</div>;
+  return (
+    <div className="fixed inset-0 overflow-hidden pointer-events-none z-0 bg-gradient-to-b from-black via-black to-[#0a1929]">
+      {stars}
+      <div className="absolute bottom-0 w-full h-64 bg-gradient-to-t from-[#071526]/20 to-transparent"></div>
+    </div>
+  );
 };
 
 export default StarsBackground;
