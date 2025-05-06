@@ -65,14 +65,14 @@ export default {
 				},
 				black: '#000000',
 				gradient: {
-					start: '#5e35b1', // deep purple
-					mid: '#9c27b0',   // purple
-					end: '#d81b60'    // pink
+					start: '#2e5cb8', // professional blue
+					mid: '#4f78cc',   // medium blue
+					end: '#6a94df'    // light blue
 				}
 			},
 			backgroundImage: {
-				'gradient': 'linear-gradient(45deg, #5e35b1, #9c27b0, #d81b60)',
-				'dark-radial': 'radial-gradient(circle at center, #1a1a2e, #000000)'
+				'gradient': 'linear-gradient(45deg, #2e5cb8, #4f78cc, #6a94df)',
+				'dark-radial': 'radial-gradient(circle at center, #10101e, #000000)'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

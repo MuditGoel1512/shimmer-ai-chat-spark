@@ -62,12 +62,12 @@
   }
   
   .glass-panel {
-    @apply bg-black/50 backdrop-blur-md border border-white/5 rounded-lg shadow-lg;
+    @apply bg-black/80 backdrop-blur-md border border-white/5 rounded-lg shadow-lg;
   }
   
   .star {
     @apply absolute rounded-full;
-    box-shadow: 0 0 8px 1px rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 4px 0px rgba(255, 255, 255, 0.1);
   }
   
   .star-sm {
@@ -93,7 +93,7 @@
   
   .gradient-border {
     --angle: 0deg;
-    border-image: linear-gradient(var(--angle), #5e35b1, #9c27b0, #d81b60) 1;
+    border-image: linear-gradient(var(--angle), #2e5cb8, #4f78cc, #6a94df) 1;
     animation: 10s rotate linear infinite;
   }
   

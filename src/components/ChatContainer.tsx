@@ -18,7 +18,7 @@ const ChatContainer: React.FC = () => {
         {isMinimized ? (
           <button 
             onClick={() => setIsMinimized(false)} 
-            className="w-full h-full flex items-center justify-between px-6 bg-black/80"
+            className="w-full h-full flex items-center justify-between px-6 bg-black/90"
           >
             <div className="flex items-center gap-2">
               <div className="bg-gradient-to-r from-gradient-start to-gradient-end w-8 h-8 rounded-full flex items-center justify-center">

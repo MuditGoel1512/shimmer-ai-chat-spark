@@ -32,9 +32,9 @@ const Index = () => {
       </div>
       
       {/* Subtle gradient elements */}
-      <div className="fixed bottom-0 left-0 w-full h-40 bg-gradient-to-t from-gradient-start/10 to-transparent opacity-50 z-0"></div>
-      <div className="absolute top-[30%] left-[20%] w-32 h-32 rounded-full bg-gradient-start/10 blur-3xl"></div>
-      <div className="absolute bottom-[20%] right-[15%] w-40 h-40 rounded-full bg-gradient-end/10 blur-3xl"></div>
+      <div className="fixed bottom-0 left-0 w-full h-40 bg-gradient-to-t from-gradient-start/5 to-transparent opacity-50 z-0"></div>
+      <div className="absolute top-[30%] left-[20%] w-32 h-32 rounded-full bg-gradient-start/5 blur-3xl"></div>
+      <div className="absolute bottom-[20%] right-[15%] w-40 h-40 rounded-full bg-gradient-end/5 blur-3xl"></div>
     </div>
   );
 };

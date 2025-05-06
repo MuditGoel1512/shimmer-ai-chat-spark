@@ -5,6 +5,7 @@ import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Tooltip } from './ui/tooltip';
 import { TooltipContent, TooltipProvider, TooltipTrigger } from './ui/tooltip';
+import { MessageSquare } from 'lucide-react';
 
 type Message = {
   id: string;
@@ -56,7 +57,7 @@ const ChatInterface = () => {
     }, 1500);
   };
 
-  // Mock AI responses
+  // Professional AI responses
   const getAIResponse = (userInput: string): string => {
     const responses = [
       "Based on my analysis, I recommend the following strategy for your business needs.",
@@ -73,7 +74,7 @@ const ChatInterface = () => {
   return (
     <div className="h-full flex flex-col">
       {/* Header */}
-      <div className="flex justify-between items-center p-4 bg-black/50 border-b border-white/5">
+      <div className="flex justify-between items-center p-4 bg-black/70 border-b border-white/5">
         <div className="flex items-center gap-2">
           <div className="bg-white/5 rounded-full p-1 text-white">
             <Plus size={16} />
@@ -153,7 +154,7 @@ const ChatInterface = () => {
       </div>
 
       {/* Tools section */}
-      <div className="flex items-center justify-between py-2 px-4 border-t border-white/5 bg-black/50">
+      <div className="flex items-center justify-between py-2 px-4 border-t border-white/5 bg-black/70">
         <div className="flex gap-1">
           <TooltipProvider>
             <Tooltip>
@@ -202,7 +203,7 @@ const ChatInterface = () => {
       </div>
 
       {/* Input form */}
-      <form onSubmit={handleSubmit} className="p-3 bg-black/70 border-t border-white/5 m-0">
+      <form onSubmit={handleSubmit} className="p-3 bg-black/80 border-t border-white/5 m-0">
         <div className="flex gap-2 bg-white/5 rounded-lg p-1">
           <Input
             value={input}
@@ -225,6 +226,3 @@ const ChatInterface = () => {
 };
 
 export default ChatInterface;
-
-// Need to import MessageSquare icon
-import { MessageSquare } from 'lucide-react';

@@ -29,22 +29,22 @@ const StarsBackground: React.FC = () => {
   useEffect(() => {
     const generateStars = () => {
       // Fewer stars for a more professional look
-      const starCount = Math.floor(window.innerWidth / 15);
+      const starCount = Math.floor(window.innerWidth / 20);
       const newStars = [];
       
-      // More subtle colors for a professional look
-      const colors = ['#5e35b1', '#7e3dbd', '#9c27b0', '#b92da6', '#d81b60'];
+      // Professional blue color palette
+      const colors = ['#2e5cb8', '#3d6ac5', '#4f78cc', '#5b86d9', '#6a94df'];
 
       for (let i = 0; i < starCount; i++) {
         // Make most stars small for a more subtle effect
-        const size = Math.random() > 0.9 ? 'lg' : Math.random() > 0.7 ? 'md' : 'sm';
+        const size = Math.random() > 0.95 ? 'lg' : Math.random() > 0.8 ? 'md' : 'sm';
         const style = {
           top: `${Math.random() * 100}%`,
           left: `${Math.random() * 100}%`,
-          opacity: 0.05 + Math.random() * 0.2 // Lower opacity for a subtle effect
+          opacity: 0.03 + Math.random() * 0.1 // Lower opacity for a subtle effect
         };
         
-        // Select a random color from our gradient colors
+        // Select a random color from our professional colors
         const color = colors[Math.floor(Math.random() * colors.length)];
 
         newStars.push(<Star key={i} size={size} style={style} color={color} />);
